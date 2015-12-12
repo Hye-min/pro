@@ -1,5 +1,9 @@
 var express = require('express'),
+<<<<<<< HEAD
     posts = require('./posts'),
+=======
+    todos = require('./todos'),
+>>>>>>> a8297ae04afc10ed7a1b857e102b4cb557db6f3e
     User = require('../models/User');
 var router = express.Router();
 
@@ -25,7 +29,11 @@ router.post('/signin', function(req, res, next) {
     } else {
       req.session.user = user;
       req.flash('success', '로그인 되었습니다.');
+<<<<<<< HEAD
       res.redirect('/posts');
+=======
+      res.redirect('/todos');
+>>>>>>> a8297ae04afc10ed7a1b857e102b4cb557db6f3e
     }
   });
 });
@@ -35,6 +43,10 @@ router.get('/signout', function(req, res, next) {
   req.flash('success', '로그아웃 되었습니다.');
   res.redirect('/');
 });
+<<<<<<< HEAD
 router.use('/posts', posts);
+=======
+router.use('/todos', todos);
+>>>>>>> a8297ae04afc10ed7a1b857e102b4cb557db6f3e
 
 module.exports = router;

@@ -11,7 +11,10 @@ function needAuth(req, res, next) {
     }
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> a8297ae04afc10ed7a1b857e102b4cb557db6f3e
 function validateForm(form, options) {
   var name = form.name || "";
   var email = form.email || "";
@@ -42,7 +45,11 @@ function validateForm(form, options) {
 }
 
 /* GET users listing. */
+<<<<<<< HEAD
 router.get('/',needAuth, function(req, res, next) {
+=======
+router.get('/', needAuth, function(req, res, next) {
+>>>>>>> a8297ae04afc10ed7a1b857e102b4cb557db6f3e
   User.find({}, function(err, users) {
     if (err) {
       return next(err);
@@ -145,7 +152,11 @@ router.post('/', function(req, res, next) {
         return next(err);
       } else {
         req.flash('success', '가입이 완료되었습니다. 로그인 해주세요.');
+<<<<<<< HEAD
         res.redirect('/signin');
+=======
+        res.redirect('/');
+>>>>>>> a8297ae04afc10ed7a1b857e102b4cb557db6f3e
       }
     });
   });

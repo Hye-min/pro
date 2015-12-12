@@ -13,7 +13,10 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var posts = require('./routes/posts');
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> a8297ae04afc10ed7a1b857e102b4cb557db6f3e
 var app = express();
 
 // view engine setup
@@ -25,7 +28,10 @@ if (app.get('env') === 'development') {
 app.locals.moment = require('moment');
 
 // mongodb connect
+<<<<<<< HEAD
 // 아래 DB접속 주소는 꼭 자기 것으로 바꾸세요!
+=======
+>>>>>>> a8297ae04afc10ed7a1b857e102b4cb557db6f3e
 mongoose.connect('mongodb://heamin0:quddnr0@ds045511.mongolab.com:45511/heamin0');
 mongoose.connection.on('error', console.log);
 
@@ -35,8 +41,11 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+<<<<<<< HEAD
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/bower_components',  express.static(path.join(__dirname, '/bower_components')));
+=======
+>>>>>>> a8297ae04afc10ed7a1b857e102b4cb557db6f3e
 app.use(methodOverride('_method', {methods: ['POST', 'GET']}));
 
 app.use(session({
@@ -46,6 +55,11 @@ app.use(session({
 }));
 app.use(flash());
 
+<<<<<<< HEAD
+=======
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/bower_components',  express.static(path.join(__dirname, '/bower_components')));
+>>>>>>> a8297ae04afc10ed7a1b857e102b4cb557db6f3e
 
 app.use(function(req, res, next) {
   res.locals.currentUser = req.session.user;
@@ -55,6 +69,10 @@ app.use(function(req, res, next) {
 
 app.use('/', routes);
 app.use('/users', users);
+<<<<<<< HEAD
+=======
+
+>>>>>>> a8297ae04afc10ed7a1b857e102b4cb557db6f3e
 app.use('/posts', posts);
 
 // catch 404 and forward to error handler
@@ -63,6 +81,10 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
+<<<<<<< HEAD
+=======
+
+>>>>>>> a8297ae04afc10ed7a1b857e102b4cb557db6f3e
 // error handlers
 
 // development error handler

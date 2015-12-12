@@ -1,7 +1,12 @@
 doctype html
 html(lang='ko')
   head
+<<<<<<< HEAD
     title survey
+=======
+    block title
+      title BBDO
+>>>>>>> a8297ae04afc10ed7a1b857e102b4cb557db6f3e
     meta(charset='UTF-8')
     link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap-theme.css')
     link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
@@ -10,6 +15,7 @@ html(lang='ko')
     script(type='text/javascript', src='/bower_components/jquery/dist/jquery.js')
     script(type='text/javascript', src='/bower_components/bootstrap/dist/js/bootstrap.js')
   body
+<<<<<<< HEAD
   block top-nav
     include ./includes/topnav
   block hero-unit
@@ -23,3 +29,18 @@ html(lang='ko')
 
   block footer
     include ./includes/footer
+=======
+    block top-nav
+      include ./includes/topnav
+    block hero-unit
+    if flashMessages
+      each texts, type in flashMessages
+        .container
+          .alert(class='alert-#{type}')
+            each msg in texts
+              p= msg           
+    block content
+
+    block footer
+      include ./includes/footer
+>>>>>>> a8297ae04afc10ed7a1b857e102b4cb557db6f3e

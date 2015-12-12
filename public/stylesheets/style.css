@@ -25,6 +25,7 @@
     margin-bottom: 10px;
     border-top-left-radius: 0;
     border-top-right-radius: 0; }
+<<<<<<< HEAD
 h1{
   font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
 
@@ -79,6 +80,9 @@ header .header-content .header-content-inner p {
     color: rgba(255,255,255,.7);
     line-height: 1.5;
 }
+=======
+
+>>>>>>> a8297ae04afc10ed7a1b857e102b4cb557db6f3e
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin-top: 50px;
