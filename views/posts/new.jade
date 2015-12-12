@@ -1,0 +1,45 @@
+extends ../layout
+
+block content
+  .container
+
+    h1.page-header 글쓰기
+
+    form(action='/posts', method='POST')
+      .form-group
+        label(for='email') Email address : #{user.email}
+        input.form-control(type='hidden', id='email', name='email', placeholder='Email', value=user.email)
+        //- label(for='password') Password
+        input.form-control(type='hidden', id='password', name='password', placeholder='Password', value=user.password)
+      .form-group
+        label(for='title') 설문 제목
+        input.form-control(type='text', id='title', name='title', placeholder='설문의 제목을 입력 하십시오.')
+      .form-group
+        label(for='content') 설문 내용
+        input.form-control(type='text', id='content', name='content', placeholder='설문의 내용을 입력 하십시오')
+      .form-group
+        input.form-control(type='hidden', id='check', name='check', placeholder='항목을 입력 하십시오')
+        input.form-control(type='hidden', id='write', name='write', placeholder='객관식 질문 내용을 입력하십시오')
+        
+        
+      div.form-actions
+        a.btn.btn-default(href='javascript:window.history.back();') 뒤로 
+        | 
+        button.btn.btn-primary(type='submit') Next
+
+
+    script(type='text/javascript').
+        $('#checkadd').click(function() {
+          var cnum = $('checknum').val() + 1;
+          
+          $("#checktab").append($('#checkrowTemplate').html());
+          $('checknum').val(cnum)
+            //- $("#checkadd").text("저장 후 추가");
+          
+          
+        });
+        $('#writeadd').click(function() {
+          var wnum = $('writenum').val() + 1;
+          $("#writetab").append($('#writerowTemplate').html());
+          $('writenum').val(wnum)
+        });

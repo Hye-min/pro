@@ -1,0 +1,44 @@
+extends ../layout
+
+block content
+  .container
+
+    h1.page-header 2.객관식 항목 추가
+    p
+      b by #{post.email}
+      | 
+      span at #{moment(post.createdAt).format('YYYY-MM-DD HH:mm:ss')} 
+      | 
+      | (조회수 #{post.read})
+      
+    //- label(for='title') 설문 제목 : #{post.title}
+    //- input.form-control(type='hidden', id='title', value=post.titles)
+    p
+      b 설문 제목
+      |  :  #{post.title}
+      
+    label(for='content') 설문내용
+    p.well(style='white-space:pre;', id='content')= post.content
+    form(role="search",action='/uri/blah' method='post').navbar-form.navbar-left
+    
+    
+    p
+      b 저장된 객관식 항목
+    each objs in obj
+      .form-group
+        input(type="checkbox",id = 'check', value= objs.content)
+        label(for='check') #{objs.content}
+      
+    
+    form(action='/posts/' + post._id + '/obj', method='POST')
+      .form-group
+        input.form-control(type = 'hidden', name='postId', value = post._id)
+        label.sr-only(for='check') 객관식 항목 
+        input.form-control(type='text', id='check', name='content', placeholder='객관식 항목을 입력 하십시오')
+      button.btn.btn-info 설문내용 저장
+        
+      div.form-actions
+        //- a.btn.btn-default(href='javascript:window.history.back();') 뒤로 
+        
+        | 
+        a.btn.btn-primary(href='/posts/' + post._id + '/1stshort') Next
